@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.css">
+<link href="./css/w2ui-1.2.min.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./css/w2ui-1.2.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<title>
+Cors Advisor
+</title>
+<script>
+$(document).ready(function() {
+	$("#fac").val('{{fac}}');
+	$("#round").val('{{round}}');
+	$("#sem").val('{{sem}}');
+});
+</script>
+<style>
+body{
+padding: 40px;
+}
+.navi {
+width:80px; 
+float:left; 
+height:auto; 
+margin-left:10px; 
+margin-bottom:-2px; 
+padding-top:10px; 
+padding-bottom:10px; 
+background-color:#fff; 
+display:inline-block; 
+color:#aaa; 
+font-family:arial; 
+font-size:11px; 
+letter-spacing:1px; 
+text-transform:uppercase; 
+text-align:center; 
+cursor:pointer; 
+border:1px solid #eaeaea;
+}
+
+.navi:hover {
+background-color:#fcfcfc; 
+color:#ffb9ca;
+}
+
+img {
+width: 200px;
+height: auto;
+position: relative; 
+top: 70px; 
+left: 350px
+}
+
+h1{
+text-align: center;
+position: relative;
+top:80px;
+font-family: calibri;
+}
+
+h3{
+text-align: center;
+position: relative;
+font-family: calibri;
+}
+
+#header{
+border-bottom: 2px solid #DBDBDB;
+font-size: 25px;
+padding: 5px;
+margin: 10px;
+}
+
+#content{
+padding: 5px;
+margin: 10px;
+border: 0px solid white;
+}
+
+</style>
+</head>
+<body>
+<div class="navbar navbar-inverse">
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+	<a style="margin-left:7px" class="brand" href="http://www.corsadvisor.appspot.com">CORS Advisor</a>
+	<ul class="nav nav-pills">
+		<li>
+			<a href="http://www.nus.edu.sg/cors/" target="_blank">CORS Home</a>
+		</li>
+		<li>
+			<a href="https://ivle.nus.edu.sg/" target="_blank">IVLE</a>
+		</li>
+		<li>
+			<a href="https://exchange.nus.edu.sg/owa/auth/logon.aspx?url=https://exchange.nus.edu.sg/owa/&reason=0" target="_blank">Email</a>
+		</li>
+		<li>
+			<a href="https://aces01.nus.edu.sg/CoE/jsp/coeMain.jsp" target="_blank">Calendar</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div style="margin-top:70px" class="span3">
+		<form action="/sign" method="post">
+			<fieldset>
+				<legend>Information Required</legend>
+				<label>Enter Module:</label>
+				<input name="mod" id="mod" type="text" placeholder="E.g. CS2100" value = "{{module.module_name}}">
+				<label>Enter Faculty:</label>
+				<select name="fac" id="fac">
+					<option value="SCHOOL OF COMPUTING">School of Computing</option>
+					<option value="SCHOOL OF BUSINESS">School of Business</option>
+					<option value="ARTS & SOCIAL SCIENCES">Arts and Social Sciences</option>
+					<option value="SCHOOL OF DESIGN AND ENVIRONMENT">School of Design and Environment</option>
+					<option value="LAW">Law</option>
+					<option value="MEDICINE">Medicine</option>
+					<option value="ENGINEERING">Engineering</option>
+					<option value="SCIENCE">Science</option>
+					<option value="DENTISTRY">Dentistry</option>
+					<option value="ALL FACULTIES">All Faculties</option>
+				</select>
+				<label>Select Semester:</label>
+				<select name="sem" id="sem">
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select>
+				<label>Select Round:</label>
+				<select name="round" id="round">
+					<option value="1A">1A</option>
+					<option value="1B">1B</option>
+					<option value="1C">1C</option>
+					<option value="2A">2A</option>
+					<option value="2B">2B</option>
+					<option value="3A">3A</option>
+					<option value="3B">3B</option>
+				</select>
+			</fieldset>
+			<input type="submit" class="btn btn-primary"></input>
+		</form>
+		</div>
+		<div class="span9">
+		<div style="margin-top:20px" id="navigation">
+			<span class="navi" onClick="$('#trend').add('#advice').hide();$('#reports').show()">Reports</span>
+			<span class="navi" onClick="$('#reports').add('#advice').hide();$('#trend').show()">Trend</span>
+			<span class="navi" onClick="$('#trend').add('#reports').hide();$('#advice').show()">Advice</span>
+		</div>
+		</div>
+		
+		<div class="span9" style="border:5px solid #eaeaea; width: 910px; height: 550px; background-color: #fff;">
+		<div id="reports"><div id="grid" style="margin:20px; width: 95%; height: 500px; overflow: scroll"></div>
+		</div>
+			
+		<div id="trend" style="display:none; width: 100%; height: 400px; margin: 20px"><div id="container" style="height:500px"></div></div>
+		
+		<div id="advice" style="display:none; font-family: calibri; overflow: auto">
+			<div id="header">Disclaimer</div><div id="content">Dear readers, <br>Our advice offered is based on a fair and statistical calculation on the past bidding records. However, it does not take into account exceptional cases or any instance of bidding points fluctuations. We remind you that such fluctuations are possible and you take extra precaution in determining the actual number of points you would like to place.</div>
+			<div id="header">Our Advice</div><div id="content"><strong>{% if avg == -1 %}No Data Available{% else %}It is recommended that you spend a minimum of {{avg}} point(s) on this module. {% endif %}</strong></div>
+			<div id="header">Using Our Table</div>
+			<div id="content"><strong>Filtering Information</strong>
+				<ul>
+					<li>Resizable Columns</li>
+					<li>Show/Hide Columns</li>
+					<li>Advanced Search Bar</li>
+				</ul>
+			</div>
+			<div id="header">Using Our Trend Graph</div>
+			<div id="content">
+				<ul>
+					<li>Show/Hide graph by selecting on the legend</li>
+					<li>Drag and Zoom</li>
+				</ul>
+			</div>
+		</div>
+		
+		</div>
+	</div>
+</div>
+	
+	
+
+	
+</body>
+<script>
+$(function () {
+	$('#grid').w2grid({ 
+		name: 'grid',
+		header: 'Bidding Records of {{module.module_name}}',
+		show: { 
+			header: true,
+			toolbar: true,
+			footer: true,
+		},
+		multiSearch: true,
+		searches: [				
+			{ field: 'recid', caption: 'Year', type: 'text' },
+			{ field: 'semester', caption: 'Sem', type: 'text' },
+			{ field: 'group', caption: 'Group', type: 'text' },
+			{ field: 'quota', caption: 'Quota', type: 'text' },
+			{ field: 'noOfBid', caption: 'No. of Bidders', type: 'text' },
+			{ field: 'lowestBid', caption: 'Lowest Bid', type: 'text' },
+			{ field: 'lowestSBid', caption: 'Lowest Succ. Bid', type: 'text' },
+			{ field: 'highestBid', caption: 'Highest Bid', type: 'text' },
+			{ field: 'faculty', caption: 'Faculty', type: 'text' },
+			{ field: 'acctType', caption: 'Account Type', type: 'text' },
+		],
+		sortData: [ { field: 'recid', direction: 'desc' } ],
+		columns: [				
+			{ field: 'recid', caption: 'Year', size: '70px', resizable: true, sortable: true, attr: 'align=center' },
+			{ field: 'semester', caption: 'Sem', size: '30px', resizable: true, sortable: true },
+			{ field: 'group', caption: 'Group', size: '80px', resizable: true, sortable: true },
+			{ field: 'quota', caption: 'Quota', size: '60px', resizable: true, sortable: true },
+			{ field: 'noOfBid', caption: 'No. of Bidders', size: '70px', resizable: true, sortable: true },
+			{ field: 'lowestBid', caption: 'Lowest Bid', size: '70px', resizable: true, sortable: true },
+			{ field: 'lowestSBid', caption: 'Lowest Succ. Bid', size: '70px', resizable: true, sortable: true },
+			{ field: 'highestBid', caption: 'Highest Bid', size: '70px', resizable: true, sortable: true },
+			{ field: 'faculty', caption: 'Faculty', size: '150px', resizable: true, sortable: true },
+			{ field: 'acctType', caption: 'Account Type', size: '200px', resizable: true, sortable: true },
+		],
+		records: [ 
+			{% for item in bidArray %}
+			{ recid: '{{item.year // 100}}/{{item.year % 100}}', semester: {{item.semester}}, group: '{{item.group}}', noOfBid: {{item.no_of_bidders}}, quota: {{item.quota}}, lowestBid: {{item.lowest_bid}}, lowestSBid: {{item.lowest_succ_bid}}, highestBid: {{item.highest_bid}}, faculty: '{{item.faculty}}', acctType: '{{item.student_type}}' },
+			{% endfor %}
+		]
+	});
+        $('#container').highcharts({
+            chart: {
+                type: 'line',
+                marginRight: 130,
+                marginBottom: 50,
+				width: 850,
+				zoomType: 'xy'
+            },
+            title: {
+                text: 'Past Year Bidding Trends for {{ module.module_name }}',
+                x: -20 //center
+            },
+            xAxis: {
+				title: {
+					text: 'Year and Semester',
+				},
+                categories: [ {% for item in bidArray %} '{{(item.year // 100)%100}}/{{item.year % 100}} Sem{{item.semester}}', {% endfor %}]
+            },
+            yAxis: {
+                title: {
+                    text: 'Bidding Points'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+			credits: {
+				enabled: false
+			},
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Lowest Bidding Point',
+                data: [{% for item in bidArray %} {{item.lowest_bid}}, {% endfor %}]
+            }, {
+                name: 'Lowest Successful Bidding Point',
+                data: [{% for item in bidArray %} {{item.lowest_succ_bid}}, {% endfor %}]
+            }, {
+                name: 'Highest Bidding Point',
+                data: [{% for item in bidArray %} {{item.highest_bid}}, {% endfor %}]
+            }, {
+                name: 'Number of Bidders',
+                data: [{% for item in bidArray %} {{item.no_of_bidders}}, {% endfor %}]
+            }]
+        });
+    });
+    
+
+</script>
+</html>
+
+

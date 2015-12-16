@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.css">
+<title>
+Cors Advisor
+</title>
+<script>
+function display_alert()
+  {
+  alert("Please insert a module code");
+  }
+</script>
+<style>
+body{
+padding: 40px;
+}
+.navi {
+width:80px; 
+float:left; 
+height:auto; 
+margin-left:10px; 
+margin-bottom:-2px; 
+padding-top:10px; 
+padding-bottom:10px; 
+background-color:#fff; 
+display:inline-block; 
+color:#aaa; 
+font-family:arial; 
+font-size:11px; 
+letter-spacing:1px; 
+text-transform:uppercase; 
+text-align:center; 
+cursor:pointer; 
+border:1px solid #eaeaea;
+}
+
+.navi:hover {
+background-color:#fcfcfc; 
+color:#ffb9ca;
+}
+
+img {
+width: 200px;
+height: auto;
+position: relative; 
+top: 70px; 
+left: 350px
+}
+
+h1{
+text-align: center;
+position: relative;
+top:80px;
+font-family: calibri;
+}
+
+h3{
+text-align: center;
+position: relative;
+font-family: calibri;
+}
+
+</style>
+</head>
+<body>
+<div class="navbar navbar-inverse">
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+	<a style="margin-left:7px" class="brand" href="">CORS Advisor</a>
+	<ul class="nav nav-pills">
+		<li>
+			<a href="http://www.nus.edu.sg/cors/" target="_blank">CORS Home</a>
+		</li>
+		<li>
+			<a href="https://ivle.nus.edu.sg/" target="_blank">IVLE</a>
+		</li>
+		<li>
+			<a href="https://exchange.nus.edu.sg/owa/auth/logon.aspx?url=https://exchange.nus.edu.sg/owa/&reason=0" target="_blank">Email</a>
+		</li>
+		<li>
+			<a href="https://aces01.nus.edu.sg/CoE/jsp/coeMain.jsp" target="_blank">Calendar</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div style="margin-top:70px" class="span3">
+		<form action="/sign" method="post">
+			<fieldset>
+				<legend>Information Required</legend>
+				<label>Enter Module:</label>
+				<input name="mod" id="mod" type="text" placeholder="E.g. CS2100">
+				<label>Enter Faculty:</label>
+				<select name="fac" id="fac">
+					<option value="SCHOOL OF COMPUTING">School of Computing</option>
+					<option value="SCHOOL OF BUSINESS">School of Business</option>
+					<option value="ARTS & SOCIAL SCIENCES">School of Arts and Social Sciences</option>
+					<option value="SCHOOL OF DESIGN AND ENVIRONMENT">School of Design and Environment</option>
+					<option value="LAW">School of Law</option>
+					<option value="MEDICINE">School of Medicine</option>
+					<option value="ENGINEERING">School of Engineering</option>
+					<option value="SCIENCE">School of Sciences</option>
+					<option value="DENTISTRY">Dentistry</option>
+					<option value="ALL FACULTIES">All Faculties</option>
+				</select>
+				<label>Select Semester:</label>
+				<select name="sem" id="sem">
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select>
+				<label>Select Round:</label>
+				<select name="round" id="round">
+					<option value="1A">1A</option>
+					<option value="1B">1B</option>
+					<option value="1C">1C</option>
+					<option value="2A">2A</option>
+					<option value="2B">2B</option>
+					<option value="3A">3A</option>
+					<option value="3B">3B</option>
+				</select>
+			</fieldset>
+			<input type="submit" class="btn btn-primary"></input>
+		</form>
+		</div>
+		
+		<div class="span9" style="border:5px solid #eaeaea; width: 910px; height: 550px; background-color: #fff; margin-top:40px">
+		<div id="main"><img src="http://i151.photobucket.com/albums/s151/starrynight13579/nuscreate.jpg"><br><h1>Welcome to Cors Advisor</h1><br><br><br><h3>Begin by filling in the information on the left</h3></div>
+		
+		</div>
+	</div>
+	</div>
+	
+	
+
+	
+</body>
+<script>display_alert()</script>
+</html>
+

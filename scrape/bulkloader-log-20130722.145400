@@ -1,0 +1,250 @@
+[INFO     2013-07-22 14:54:00,634 bulkloader.py] Logging to bulkloader-log-20130722.145400
+[INFO     2013-07-22 14:54:00,634 bulkloader.py] Throttling transfers:
+[INFO     2013-07-22 14:54:00,634 bulkloader.py] Bandwidth: 250000 bytes/second
+[INFO     2013-07-22 14:54:00,634 bulkloader.py] HTTP connections: 8/second
+[INFO     2013-07-22 14:54:00,635 bulkloader.py] Entities inserted/fetched/modified: 20/second
+[INFO     2013-07-22 14:54:00,635 bulkloader.py] Batch Size: 10
+[INFO     2013-07-22 14:54:12,615 bulkloader.py] Opening database: bulkloader-progress-20130722.145400.sql3
+[INFO     2013-07-22 14:54:12,642 bulkloader.py] Opening database: bulkloader-results-20130722.145400.sql3
+[DEBUG    2013-07-22 14:54:12,688 adaptive_thread_pool.py] [WorkerThread-0] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,690 adaptive_thread_pool.py] [WorkerThread-1] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,690 adaptive_thread_pool.py] [WorkerThread-2] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,690 adaptive_thread_pool.py] [WorkerThread-3] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,690 adaptive_thread_pool.py] [WorkerThread-4] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,691 adaptive_thread_pool.py] [WorkerThread-5] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,693 adaptive_thread_pool.py] [WorkerThread-6] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,693 adaptive_thread_pool.py] [WorkerThread-7] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,693 adaptive_thread_pool.py] [WorkerThread-8] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,694 adaptive_thread_pool.py] [WorkerThread-9] WorkerThread: started
+[DEBUG    2013-07-22 14:54:12,694 bulkloader.py] Configuring remote_api. url_path = /_ah/remote_api, servername = localhost:8080
+[DEBUG    2013-07-22 14:54:12,694 bulkloader.py] Bulkloader using app_id: dev~corsadvisors
+[INFO     2013-07-22 14:54:12,694 bulkloader.py] Connecting to localhost:8080/_ah/remote_api
+[DEBUG    2013-07-22 14:54:12,717 bulkloader.py] [Thread-11] ExportProgressThread: started
+[DEBUG    2013-07-22 14:54:12,717 bulkloader.py] [Thread-12] DataSourceThread: started
+[INFO     2013-07-22 14:54:12,717 bulkloader.py] Downloading kinds: ['Bid_Info']
+[DEBUG    2013-07-22 14:54:12,734 bulkloader.py] [Thread-12] DataSourceThread: exiting
+[DEBUG    2013-07-22 14:54:12,752 bulkloader.py] Waiting for worker threads to finish...
+[DEBUG    2013-07-22 14:54:12,756 adaptive_thread_pool.py] [WorkerThread-0] Got work item Bid_Info-ASC[None to None]
+[DEBUG    2013-07-22 14:54:12,996 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.005
+[DEBUG    2013-07-22 14:54:12,996 bulkloader.py] Entities transferred total: 10
+[DEBUG    2013-07-22 14:54:13,003 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:13,015 bulkloader.py] [WorkerThread-0] Bid_Info-ASC[None to None] Transferred 10 entities in 0.2 seconds
+[DEBUG    2013-07-22 14:54:13,015 adaptive_thread_pool.py] Increasing active thread count to 2
+[DEBUG    2013-07-22 14:54:13,016 adaptive_thread_pool.py] [WorkerThread-1] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to None]
+[DEBUG    2013-07-22 14:54:13,190 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.005
+[DEBUG    2013-07-22 14:54:13,190 bulkloader.py] Entities transferred total: 20
+[DEBUG    2013-07-22 14:54:13,196 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:13,217 bulkloader.py] [WorkerThread-1] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to None] Transferred 10 entities in 0.2 seconds
+[DEBUG    2013-07-22 14:54:13,217 adaptive_thread_pool.py] Increasing active thread count to 3
+[DEBUG    2013-07-22 14:54:13,217 adaptive_thread_pool.py] [WorkerThread-3] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629518861565952L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:13,217 adaptive_thread_pool.py] [WorkerThread-1] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5629518861565952L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:13,450 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:13,450 bulkloader.py] Entities transferred total: 30
+[DEBUG    2013-07-22 14:54:13,457 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:13,476 bulkloader.py] [WorkerThread-3] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629518861565952L, _app=u'dev~corsadvisors')] Transferred 10 entities in 0.2 seconds
+[DEBUG    2013-07-22 14:54:13,476 adaptive_thread_pool.py] Increasing active thread count to 4
+[DEBUG    2013-07-22 14:54:13,477 adaptive_thread_pool.py] [WorkerThread-5] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066573203111936L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:13,477 adaptive_thread_pool.py] [WorkerThread-3] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5066573203111936L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629316998103040L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:13,529 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.005
+[DEBUG    2013-07-22 14:54:13,529 bulkloader.py] Entities transferred total: 40
+[DEBUG    2013-07-22 14:54:13,533 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:13,552 bulkloader.py] [WorkerThread-1] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5629518861565952L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors')) Transferred 10 entities in 0.3 seconds
+[DEBUG    2013-07-22 14:54:13,552 adaptive_thread_pool.py] Increasing active thread count to 5
+[DEBUG    2013-07-22 14:54:13,552 adaptive_thread_pool.py] [WorkerThread-7] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5629729314963456L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6192468814987264L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:13,552 adaptive_thread_pool.py] [WorkerThread-8] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6192468814987264L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:14,286 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:14,286 bulkloader.py] Entities transferred total: 50
+[DEBUG    2013-07-22 14:54:14,292 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:14,315 bulkloader.py] [WorkerThread-5] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066573203111936L, _app=u'dev~corsadvisors')] Transferred 10 entities in 0.8 seconds
+[DEBUG    2013-07-22 14:54:14,315 adaptive_thread_pool.py] Increasing active thread count to 6
+[DEBUG    2013-07-22 14:54:14,315 adaptive_thread_pool.py] [WorkerThread-2] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4785093931433984L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:14,316 adaptive_thread_pool.py] [WorkerThread-5] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4785093931433984L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066358454747136L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:14,450 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:14,450 bulkloader.py] Entities transferred total: 60
+[DEBUG    2013-07-22 14:54:14,457 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:14,479 bulkloader.py] [WorkerThread-3] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5066573203111936L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629316998103040L, _app=u'dev~corsadvisors')) Transferred 10 entities in 0.9 seconds
+[DEBUG    2013-07-22 14:54:14,479 adaptive_thread_pool.py] Increasing active thread count to 7
+[DEBUG    2013-07-22 14:54:14,480 adaptive_thread_pool.py] [WorkerThread-6] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5066779361542144L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5348048179822592L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:14,480 adaptive_thread_pool.py] [WorkerThread-3] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5348048179822592L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629316998103040L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:14,611 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.005
+[DEBUG    2013-07-22 14:54:14,611 bulkloader.py] Entities transferred total: 70
+[DEBUG    2013-07-22 14:54:14,618 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:14,638 bulkloader.py] [WorkerThread-8] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6192468814987264L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.0 seconds
+[DEBUG    2013-07-22 14:54:14,638 adaptive_thread_pool.py] Increasing active thread count to 8
+[DEBUG    2013-07-22 14:54:14,638 adaptive_thread_pool.py] [WorkerThread-4] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 6192679268384768L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6473943791697920L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:14,638 adaptive_thread_pool.py] [WorkerThread-8] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6473943791697920L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:14,775 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:14,775 bulkloader.py] Entities transferred total: 80
+[DEBUG    2013-07-22 14:54:14,782 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:14,813 bulkloader.py] [WorkerThread-7] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5629729314963456L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6192468814987264L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.2 seconds
+[DEBUG    2013-07-22 14:54:14,813 adaptive_thread_pool.py] Increasing active thread count to 9
+[DEBUG    2013-07-22 14:54:14,815 adaptive_thread_pool.py] [WorkerThread-7] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 5629729314963456L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5910998133243904L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:14,815 adaptive_thread_pool.py] [WorkerThread-1] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5910998133243904L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6192266951524352L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:15,404 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:15,404 bulkloader.py] Entities transferred total: 90
+[DEBUG    2013-07-22 14:54:15,414 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:15,447 bulkloader.py] [WorkerThread-2] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4785093931433984L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.0 seconds
+[DEBUG    2013-07-22 14:54:15,447 adaptive_thread_pool.py] Increasing active thread count to 10
+[DEBUG    2013-07-22 14:54:15,448 adaptive_thread_pool.py] [WorkerThread-9] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4644360738045952L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:15,448 adaptive_thread_pool.py] [WorkerThread-2] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4644360738045952L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4784892067971072L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:15,502 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:15,503 bulkloader.py] Entities transferred total: 100
+[DEBUG    2013-07-22 14:54:15,513 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:15,532 bulkloader.py] [WorkerThread-5] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4785093931433984L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066358454747136L, _app=u'dev~corsadvisors')) Transferred 10 entities in 1.2 seconds
+[DEBUG    2013-07-22 14:54:15,533 adaptive_thread_pool.py] [WorkerThread-5] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4785304384831488L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4925831419789312L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:15,536 adaptive_thread_pool.py] [WorkerThread-0] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4925831419789312L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066358454747136L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:24,078 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:24,078 bulkloader.py] Entities transferred total: 110
+[DEBUG    2013-07-22 14:54:24,084 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:24,112 bulkloader.py] [WorkerThread-8] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6473943791697920L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors')] Transferred 10 entities in 9.4 seconds
+[DEBUG    2013-07-22 14:54:24,114 adaptive_thread_pool.py] [WorkerThread-8] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 6474154245095424L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6614681280053248L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:24,885 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.020
+[DEBUG    2013-07-22 14:54:24,885 bulkloader.py] Entities transferred total: 120
+[DEBUG    2013-07-22 14:54:24,987 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:25,010 bulkloader.py] [WorkerThread-9] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4644360738045952L, _app=u'dev~corsadvisors')] Transferred 10 entities in 9.4 seconds
+[DEBUG    2013-07-22 14:54:25,010 adaptive_thread_pool.py] [WorkerThread-9] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6614681280053248L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:25,976 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:25,976 bulkloader.py] Entities transferred total: 130
+[DEBUG    2013-07-22 14:54:26,019 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:26,052 bulkloader.py] [WorkerThread-3] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5348048179822592L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629316998103040L, _app=u'dev~corsadvisors')] Transferred 10 entities in 11.4 seconds
+[DEBUG    2013-07-22 14:54:26,053 adaptive_thread_pool.py] [WorkerThread-3] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4573991993868288L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:26,220 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.011
+[DEBUG    2013-07-22 14:54:26,221 bulkloader.py] Entities transferred total: 140
+[DEBUG    2013-07-22 14:54:26,247 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:26,322 bulkloader.py] [WorkerThread-1] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5910998133243904L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6192266951524352L, _app=u'dev~corsadvisors')) Transferred 10 entities in 11.3 seconds
+[DEBUG    2013-07-22 14:54:26,322 adaptive_thread_pool.py] [WorkerThread-1] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4573991993868288L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4644154579615744L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:26,852 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:26,852 bulkloader.py] Entities transferred total: 150
+[DEBUG    2013-07-22 14:54:26,875 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:26,934 bulkloader.py] [WorkerThread-0] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4925831419789312L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066358454747136L, _app=u'dev~corsadvisors')] Transferred 10 entities in 11.2 seconds
+[DEBUG    2013-07-22 14:54:26,934 adaptive_thread_pool.py] [WorkerThread-0] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5348254338252800L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5488785668177920L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:27,319 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.008
+[DEBUG    2013-07-22 14:54:27,319 bulkloader.py] Entities transferred total: 160
+[DEBUG    2013-07-22 14:54:27,359 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:27,418 bulkloader.py] [WorkerThread-8] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 6474154245095424L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6614681280053248L, _app=u'dev~corsadvisors')] Transferred 10 entities in 3.1 seconds
+[DEBUG    2013-07-22 14:54:27,420 adaptive_thread_pool.py] [WorkerThread-8] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5488785668177920L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629316998103040L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:27,552 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:27,552 bulkloader.py] Entities transferred total: 170
+[DEBUG    2013-07-22 14:54:27,611 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:27,647 bulkloader.py] [WorkerThread-7] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 5629729314963456L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5910998133243904L, _app=u'dev~corsadvisors')] Transferred 10 entities in 12.7 seconds
+[DEBUG    2013-07-22 14:54:27,648 adaptive_thread_pool.py] Decreasing the number of active threads to 9
+[DEBUG    2013-07-22 14:54:27,779 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:27,779 bulkloader.py] Entities transferred total: 180
+[DEBUG    2013-07-22 14:54:27,793 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:27,871 bulkloader.py] [WorkerThread-2] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4644360738045952L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4784892067971072L, _app=u'dev~corsadvisors')) Transferred 10 entities in 12.3 seconds
+[DEBUG    2013-07-22 14:54:27,871 adaptive_thread_pool.py] Decreasing the number of active threads to 8
+[DEBUG    2013-07-22 14:54:27,914 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:27,914 bulkloader.py] Entities transferred total: 190
+[DEBUG    2013-07-22 14:54:27,926 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:27,960 bulkloader.py] [WorkerThread-5] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4785304384831488L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4925831419789312L, _app=u'dev~corsadvisors')] Transferred 10 entities in 12.3 seconds
+[DEBUG    2013-07-22 14:54:27,960 adaptive_thread_pool.py] Decreasing the number of active threads to 7
+[DEBUG    2013-07-22 14:54:28,092 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:28,092 bulkloader.py] Entities transferred total: 200
+[DEBUG    2013-07-22 14:54:28,101 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:28,144 bulkloader.py] [WorkerThread-3] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4573991993868288L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.9 seconds
+[DEBUG    2013-07-22 14:54:28,144 adaptive_thread_pool.py] Increasing active thread count to 8
+[DEBUG    2013-07-22 14:54:28,145 adaptive_thread_pool.py] [WorkerThread-3] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5911204291674112L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6051735621599232L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:28,145 adaptive_thread_pool.py] [WorkerThread-2] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6051735621599232L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6192266951524352L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:28,233 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:28,233 bulkloader.py] Entities transferred total: 210
+[DEBUG    2013-07-22 14:54:28,246 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:28,278 bulkloader.py] [WorkerThread-0] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5348254338252800L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5488785668177920L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.3 seconds
+[DEBUG    2013-07-22 14:54:28,278 adaptive_thread_pool.py] Increasing active thread count to 9
+[DEBUG    2013-07-22 14:54:28,279 adaptive_thread_pool.py] [WorkerThread-5] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4996200163966976L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066358454747136L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:28,279 adaptive_thread_pool.py] [WorkerThread-0] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4926041873186816L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4996200163966976L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:28,365 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:28,365 bulkloader.py] Entities transferred total: 220
+[DEBUG    2013-07-22 14:54:28,375 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:28,401 bulkloader.py] [WorkerThread-1] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4573991993868288L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4644154579615744L, _app=u'dev~corsadvisors')) Transferred 10 entities in 2.0 seconds
+[DEBUG    2013-07-22 14:54:28,401 adaptive_thread_pool.py] Increasing active thread count to 10
+[DEBUG    2013-07-22 14:54:28,403 adaptive_thread_pool.py] [WorkerThread-7] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 6474154245095424L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6544312535875584L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:28,403 adaptive_thread_pool.py] [WorkerThread-1] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6544312535875584L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6614470826655744L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:28,542 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:28,542 bulkloader.py] Entities transferred total: 230
+[DEBUG    2013-07-22 14:54:28,561 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:28,584 bulkloader.py] [WorkerThread-6] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5066779361542144L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5348048179822592L, _app=u'dev~corsadvisors')] Transferred 10 entities in 14.0 seconds
+[DEBUG    2013-07-22 14:54:28,584 adaptive_thread_pool.py] Decreasing the number of active threads to 9
+[DEBUG    2013-07-22 14:54:28,704 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:28,704 bulkloader.py] Entities transferred total: 240
+[DEBUG    2013-07-22 14:54:28,714 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:28,736 bulkloader.py] [WorkerThread-4] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 6192679268384768L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6473943791697920L, _app=u'dev~corsadvisors')] Transferred 10 entities in 14.0 seconds
+[DEBUG    2013-07-22 14:54:28,736 adaptive_thread_pool.py] Decreasing the number of active threads to 8
+[DEBUG    2013-07-22 14:54:28,805 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.005
+[DEBUG    2013-07-22 14:54:28,805 bulkloader.py] Entities transferred total: 250
+[DEBUG    2013-07-22 14:54:28,815 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:28,838 bulkloader.py] [WorkerThread-8] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5488785668177920L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5629316998103040L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.4 seconds
+[DEBUG    2013-07-22 14:54:28,838 adaptive_thread_pool.py] Increasing active thread count to 9
+[DEBUG    2013-07-22 14:54:28,838 adaptive_thread_pool.py] [WorkerThread-6] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 5629729314963456L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5770260644888576L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:28,838 adaptive_thread_pool.py] [WorkerThread-4] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5770260644888576L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5910791974813696L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:28,976 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:28,976 bulkloader.py] Entities transferred total: 260
+[DEBUG    2013-07-22 14:54:29,059 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:29,081 bulkloader.py] [WorkerThread-3] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5911204291674112L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6051735621599232L, _app=u'dev~corsadvisors')] Transferred 10 entities in 0.8 seconds
+[DEBUG    2013-07-22 14:54:29,081 adaptive_thread_pool.py] Increasing active thread count to 10
+[DEBUG    2013-07-22 14:54:29,082 adaptive_thread_pool.py] [WorkerThread-8] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4644566896476160L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4714729482223616L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:29,082 adaptive_thread_pool.py] [WorkerThread-3] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4714729482223616L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4784892067971072L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:29,119 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:29,119 bulkloader.py] Entities transferred total: 270
+[DEBUG    2013-07-22 14:54:29,130 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:29,157 bulkloader.py] [WorkerThread-2] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6051735621599232L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6192266951524352L, _app=u'dev~corsadvisors')] Transferred 10 entities in 0.9 seconds
+[DEBUG    2013-07-22 14:54:29,157 adaptive_thread_pool.py] [WorkerThread-2] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4785304384831488L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4855466970578944L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:29,286 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:29,286 bulkloader.py] Entities transferred total: 280
+[DEBUG    2013-07-22 14:54:29,298 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:29,319 bulkloader.py] [WorkerThread-5] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4996200163966976L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5066358454747136L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.0 seconds
+[DEBUG    2013-07-22 14:54:29,321 adaptive_thread_pool.py] [WorkerThread-5] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4855466970578944L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4925629556326400L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:29,450 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:29,450 bulkloader.py] Entities transferred total: 290
+[DEBUG    2013-07-22 14:54:29,459 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:29,486 bulkloader.py] [WorkerThread-0] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4926041873186816L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4996200163966976L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.1 seconds
+[DEBUG    2013-07-22 14:54:29,487 adaptive_thread_pool.py] [WorkerThread-0] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4538807621779456L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:29,615 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:29,615 bulkloader.py] Entities transferred total: 300
+[DEBUG    2013-07-22 14:54:29,655 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:29,690 bulkloader.py] [WorkerThread-1] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6544312535875584L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6614470826655744L, _app=u'dev~corsadvisors')) Transferred 10 entities in 1.2 seconds
+[DEBUG    2013-07-22 14:54:29,690 adaptive_thread_pool.py] [WorkerThread-1] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4538807621779456L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4573785835438080L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:29,842 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.027
+[DEBUG    2013-07-22 14:54:29,842 bulkloader.py] Entities transferred total: 310
+[DEBUG    2013-07-22 14:54:29,861 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:29,890 bulkloader.py] [WorkerThread-7] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 6474154245095424L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6544312535875584L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.3 seconds
+[DEBUG    2013-07-22 14:54:29,891 adaptive_thread_pool.py] [WorkerThread-7] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 5348254338252800L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5418416924000256L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:30,025 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:30,025 bulkloader.py] Entities transferred total: 320
+[DEBUG    2013-07-22 14:54:30,068 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:30,108 bulkloader.py] [WorkerThread-6] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 5629729314963456L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5770260644888576L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.1 seconds
+[DEBUG    2013-07-22 14:54:30,108 adaptive_thread_pool.py] [WorkerThread-6] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5418416924000256L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5488579509747712L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:30,414 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:30,414 bulkloader.py] Entities transferred total: 330
+[DEBUG    2013-07-22 14:54:30,496 bulkloader.py] delete: delta=0.002
+[DEBUG    2013-07-22 14:54:30,558 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:30,558 bulkloader.py] Entities transferred total: 340
+[DEBUG    2013-07-22 14:54:30,566 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:30,581 bulkloader.py] [WorkerThread-8] Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4644566896476160L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4714729482223616L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.3 seconds
+[DEBUG    2013-07-22 14:54:30,582 adaptive_thread_pool.py] [WorkerThread-8] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 4574198152298496L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4609176365957120L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:30,588 bulkloader.py] [WorkerThread-3] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4714729482223616L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4784892067971072L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.3 seconds
+[DEBUG    2013-07-22 14:54:30,588 adaptive_thread_pool.py] [WorkerThread-3] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4609176365957120L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4644154579615744L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:30,779 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:30,779 bulkloader.py] Entities transferred total: 350
+[DEBUG    2013-07-22 14:54:31,168 bulkloader.py] delete: delta=0.003
+[DEBUG    2013-07-22 14:54:31,364 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.007
+[DEBUG    2013-07-22 14:54:31,364 bulkloader.py] Entities transferred total: 360
+[DEBUG    2013-07-22 14:54:31,371 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:31,404 bulkloader.py] [WorkerThread-5] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 4855466970578944L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4925629556326400L, _app=u'dev~corsadvisors')) Transferred 10 entities in 1.4 seconds
+[DEBUG    2013-07-22 14:54:31,404 adaptive_thread_pool.py] [WorkerThread-5] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 5066779361542144L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5207310691467264L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:31,414 bulkloader.py] [WorkerThread-0] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4503829408120832L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4538807621779456L, _app=u'dev~corsadvisors')] Transferred 10 entities in 1.5 seconds
+[DEBUG    2013-07-22 14:54:31,414 adaptive_thread_pool.py] [WorkerThread-0] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5207310691467264L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5347842021392384L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:31,466 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:31,466 bulkloader.py] Entities transferred total: 370
+[DEBUG    2013-07-22 14:54:31,476 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:31,492 bulkloader.py] [WorkerThread-4] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 5770260644888576L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5910791974813696L, _app=u'dev~corsadvisors')) Transferred 10 entities in 2.6 seconds
+[DEBUG    2013-07-22 14:54:31,493 adaptive_thread_pool.py] [WorkerThread-4] Got work item Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 6192679268384768L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6333210598309888L, _app=u'dev~corsadvisors')]
+[DEBUG    2013-07-22 14:54:31,763 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.008
+[DEBUG    2013-07-22 14:54:31,763 bulkloader.py] Entities transferred total: 380
+[DEBUG    2013-07-22 14:54:31,917 bulkloader.py] delete: delta=0.001
+[DEBUG    2013-07-22 14:54:31,930 bulkloader.py] bulkloader-results-20130722.145400.sql3 insert: delta=0.006
+[DEBUG    2013-07-22 14:54:31,930 bulkloader.py] Entities transferred total: 390
+[DEBUG    2013-07-22 14:54:31,940 bulkloader.py] delete: delta=0.000
+[DEBUG    2013-07-22 14:54:31,999 bulkloader.py] [WorkerThread-2] Bid_Info-DESC[datastore_types.Key.from_path(u'Bid_Info', 4785304384831488L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 4855466970578944L, _app=u'dev~corsadvisors')] Transferred 10 entities in 2.5 seconds
+[DEBUG    2013-07-22 14:54:32,000 adaptive_thread_pool.py] [WorkerThread-2] Got work item Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6333210598309888L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6473741928235008L, _app=u'dev~corsadvisors'))
+[DEBUG    2013-07-22 14:54:32,010 bulkloader.py] [WorkerThread-9] Bid_Info-ASC(datastore_types.Key.from_path(u'Bid_Info', 6614681280053248L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 6755208315011072L, _app=u'dev~corsadvisors')] Transferred 10 entities in 6.9 seconds
+[DEBUG    2013-07-22 14:54:32,010 adaptive_thread_pool.py] [WorkerThread-9] Got work item Bid_Info-DESC(datastore_types.Key.from_path(u'Bid_Info', 5488991826608128L, _app=u'dev~corsadvisors') to datastore_types.Key.from_path(u'Bid_Info', 5559154412355584L, _app=u'dev~corsadvisors')]

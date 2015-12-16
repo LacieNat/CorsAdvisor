@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<link rel="stylesheet" type="text/css" href="bootstrap-responsive.css">
+<link href="./w2ui-1.2.min.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./w2ui-1.2.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script language="javascript" src="trimpath/query.js"></script>
+<script type="text/javascript" src="cors_data.js"></script>
+
+<script>
+// submit is clicked
+$(document).ready(function(){
+  $(".btn").click(function(){
+
+  	// clear grid
+	w2ui['grid'].clear()
+
+    module = $("#mod").val()
+    faculty = $("#fac").val()
+    studtype = $("#stud").val()
+
+
+    var statement = queryLang.parseSQL("SELECT * FROM data WHERE data.Module = '" + module + "' AND data.Faculty = '" + faculty +"'")
+
+	results = statement.filter(tableData);
+
+	
+	if(studtype == "Return")
+	{
+		for(var i=0; i<results.length; i++)
+		{
+			if(results[i].StudType.indexOf("New")>=0)
+			{
+				results.splice(i, 1)
+				i--
+			}
+		}
+	}
+	else
+	{
+		for(var i=0; i<results.length; i++)
+		{
+			if(results[i].StudType.indexOf("Return")>=0)
+			{
+				results.splice(i, 1)
+				i--
+			}
+		}
+	}
+	
+	// set grid
+	setTimeout(function() { w2ui['grid'].add(results) }, 200)
+
+	$("#reportspan").click()
+	
+  })
+})
+</script>
+
+
+
+<title>
+CORS Advisor
+</title>
+<style>
+body{
+padding: 40px;
+}
+.navi {
+width:80px; 
+float:left; 
+height:auto; 
+margin-left:10px; 
+margin-bottom:-2px; 
+padding-top:10px; 
+padding-bottom:10px; 
+background-color:#fff; 
+display:inline-block; 
+color:#aaa; 
+font-family:arial; 
+font-size:11px; 
+letter-spacing:1px; 
+text-transform:uppercase; 
+text-align:center; 
+cursor:pointer; 
+border:1px solid #eaeaea;
+}
+
+.navi:hover {
+background-color:#fcfcfc; 
+color:#ffb9ca;
+}
+
+img {
+width: 200px;
+height: auto;
+position: relative; 
+top: 70px; 
+left: 350px
+}
+
+h1{
+text-align: center;
+position: relative;
+top:80px;
+font-family: calibri;
+}
+
+h3{
+text-align: center;
+position: relative;
+font-family: calibri;
+}
+</style>
+</head>
+<body>
+<div class="navbar navbar-inverse">
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+	<a style="margin-left:7px" class="brand" href="">CORS Advisor</a>
+	<ul class="nav nav-pills">
+		<li>
+			<a href="http://www.nus.edu.sg/cors/" target="_blank">CORS Home</a>
+		</li>
+		<li>
+			<a href="https://ivle.nus.edu.sg/" target="_blank">IVLE</a>
+		</li>
+		<li>
+			<a href="https://exchange.nus.edu.sg/owa/auth/logon.aspx?url=https://exchange.nus.edu.sg/owa/&reason=0" target="_blank">Email</a>
+		</li>
+		<li>
+			<a href="https://aces01.nus.edu.sg/CoE/jsp/coeMain.jsp" target="_blank">Calendar</a>
+		</li>
+	</ul>
+	<form style="margin-right:10px" class="navbar-search pull-right">
+		<input type="text" class="search-query" placeholder="Search">
+	</form>
+	</div>
+</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div style="margin-top:70px" class="span3">
+		<form>
+			<fieldset>
+				<legend>Information Required</legend>
+				<label>Enter Module:</label>
+				<input name="mod" id="mod" type="text" placeholder="E.g. CS2100">
+				<label>Enter Faculty:</label>
+				<select name="fac" id="fac">
+					<option value="SOC">School of Computing</option>
+					<option value="BIZ">School of Business</option>
+					<option value="FASS">School of Arts and Social Sciences</option>
+					<option value="SDE">School of Design and Technology</option>
+					<option value="LAW">School of Law</option>
+					<option value="MED">School of Medicine</option>
+					<option value="ENG">School of Engineering</option>
+					<option value="SCI">School of Sciences</option>
+				</select>
+				<label>Enter Student Type:</label>
+				<select name="stud" id="stud">
+					<option value="Return">Returning Student</option>
+					<option value="New">New Student</option>
+				</select>
+				<label>Number of Bidding Points Available:</label>
+				<input name="bidpoints" type="text" placeholder="E.g. 1234">
+				<label>Select Round:</label>
+				<select name="round" id="round">
+					<option value="1A">1A</option>
+					<option value="1B">1B</option>
+					<option value="1C">1C</option>
+					<option value="2A">2A</option>
+					<option value="2B">2B</option>
+					<option value="3A">3A</option>
+					<option value="3B">3B</option>		
+			</fieldset>
+		</form>
+		<button class="btn" type="button">Submit</button>
+		</div>
+		<div class="span7">
+		<div style="margin-top:20px" id="navigation">
+			<span id="reportspan" class="navi" onClick="document.getElementById('main').innerHTML=document.getElementById('reports').innerHTML">Reports</span>
+			<span class="navi" onClick="document.getElementById('main').innerHTML=document.getElementById('trend').innerHTML">Trend</span>
+			<span class="navi" onClick="document.getElementById('main').innerHTML=document.getElementById('advice').innerHTML">Advice</span>
+		</div>
+		</div>
+		
+		<div class="span9" style="border:5px solid #eaeaea; width: 900px; height: 550px; background-color: #fff;">
+		<div id="main"><img src="nuscreate.jpg"><br><h1>Welcome to NUS Create</h1><br><br><br><h3>Begin by filling in the information on the left</h3></div>
+		<div id="reports" style="visibility:hidden"><div id="grid" style="margin:20px; width: 95%; height: 500px;"></div>
+		</div>
+			
+		<div id="trend" style="visibility:hidden"><div id="container" style="min-width: 400px; height: 400px; margin: 20px"></div></div>
+		
+		<div id="advice" style="visibility:hidden; font-family: calibri;"><center><strong> It is advised that you spend 1090-1200 points on this module </strong></center></div>
+		
+		</div>
+	</div>
+	</div>
+	
+	
+
+	
+</body>
+<script>
+$('#grid').w2grid({ 
+	name: 'grid', 
+	show: { 
+		toolbar: true,
+		footer: true 
+	},
+	multiSearch: false,
+	searches: [				
+		{ field: 'quota', caption: 'Quota', type: 'text' },
+		{ field: 'noOfBid', caption: 'Number of Bidders', type: 'text' },
+		{ field: 'year', caption: 'Year', type: 'text' },
+	],
+	sortData: [ { field: 'recid', direction: 'asc' } ],
+	columns: [				
+		{ field: 'recid', caption: 'Year', size: '45px', sortable: true, attr: 'align=center' },
+		{ field: 'Sem', caption: 'Semester', size: '65px', sortable: true},
+		{ field: 'Quota', caption: 'Quota', size: '50px', sortable: true },
+		{ field: 'Bidders', caption: 'No. of Bidders', size: '100px', sortable: true },
+		{ field: 'LowBid', caption: 'Lowest Bid', size: '75px' },
+		{ field: 'LowSBid', caption: 'Lowest Succ. Bid', size: '110px' },
+		{ field: 'HighBid', caption: 'Highest Bid', size: '80px' },
+		{ field: 'Faculty', caption: 'Faculty', size: '60px' },
+		{ field: 'StudType', caption: 'Account Type', size: '100px' },
+	],
+	records: []
+});
+
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'line',
+                marginRight: 130,
+                marginBottom: 25
+            },
+            title: {
+                text: 'Past Year Bidding Trends for EG1231',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Source: cors.edu.sg',
+                x: -20
+            },
+            xAxis: {
+                categories: ['2002', '2003', '2004', '2005', '2006', '2007',
+                    '2008', '2009', '2010', '2011', '2012', '2013']
+            },
+            yAxis: {
+                title: {
+                    text: 'Bidding Points'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '°C'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Lowest Bidding Point',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            }, {
+                name: 'Lowest Successful Bidding Point',
+                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+            }, {
+                name: 'Highest Bidding Point',
+                data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+            }, {
+                name: 'Number of Bidders',
+                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            }]
+        });
+    });
+    
+
+</script>
+</html>
+
+

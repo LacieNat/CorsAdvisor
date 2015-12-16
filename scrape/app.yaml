@@ -1,0 +1,32 @@
+application: s~corsadvisors
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /css
+  static_dir: css
+  
+- url: /js
+  static_dir: js
+  
+- url: /index.html
+  static_files: index.html
+  upload: index.html
+  
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /.*
+  script: scrape.application
+  
+builtins:
+- remote_api: on
+    
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
